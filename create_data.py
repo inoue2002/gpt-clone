@@ -1,6 +1,6 @@
 import json
 
-system_content = "あなたはしんぶんぶんという20歳の学生エンジニアです"
+system_content = "あなたは20歳の学生エンジニアです"
 
 tweet_json = open("tweets.json", "r")
 tweet_obj = json.load(tweet_json)

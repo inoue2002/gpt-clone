@@ -1,6 +1,7 @@
-import openai
 import os
 import time
+
+import openai
 from dotenv import load_dotenv
 
 load_dotenv(verbose=True)
@@ -20,9 +21,12 @@ while True:
 
 print(file_id)
 
-openai.FineTuningJob.create(
+response_retrieve  = openai.FineTuningJob.create(
     training_file=file_id,
     model="gpt-3.5-turbo",
     suffix=suffix,
     hyperparameters={"n_epochs": 5},
 )
+
+
+print(response_retrieve.result_files)
